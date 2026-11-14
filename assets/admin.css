@@ -1,0 +1,124 @@
+/* Estilos del sistema admin (se usa junto con Bootstrap).
+   Colores del diseño de Belén: azul oscuro #0F2A3D y verde azulado #0B7F7B.
+   La web pública usa estilos.css (Sofía); no se mezclan porque ese archivo
+   cambia el aspecto de todos los form, input y button. */
+
+body {
+    background-color: #F4F7F8;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #344054;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'DM Sans', sans-serif;
+    color: #0F2A3D;
+}
+
+.navbar-clinica {
+    background-color: #0F2A3D;
+}
+
+.navbar-clinica .navbar-brand {
+    color: #fff;
+    font-weight: 700;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.btn-verde {
+    background-color: #0B7F7B;
+    border-color: #0B7F7B;
+    color: #fff;
+}
+
+.btn-verde:hover,
+.btn-verde:focus {
+    background-color: #086966;
+    border-color: #086966;
+    color: #fff;
+}
+
+.btn-ambar {
+    background-color: #F2A900;
+    border-color: #F2A900;
+    color: #0F2A3D;
+}
+
+.btn-ambar:hover {
+    background-color: #D99700;
+    border-color: #D99700;
+    color: #0F2A3D;
+}
+
+.btn-borde {
+    background-color: transparent;
+    border: 1px solid #0B7F7B;
+    color: #0B7F7B;
+}
+
+.btn-borde:hover {
+    background-color: #0B7F7B;
+    color: #fff;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #0B7F7B;
+    box-shadow: 0 0 0 0.2rem rgba(11, 127, 123, 0.15);
+}
+
+.table-dark {
+    --bs-table-bg: #0F2A3D;
+}
+
+/* Resumen del turno (formulario de Belén) */
+.resumen-turno {
+    background-color: #0F2A3D;
+    color: #fff;
+    border-left: 4px solid #0B7F7B;
+}
+
+.resumen-turno h5 {
+    color: #fff;
+}
+
+.resumen-turno .text-muted {
+    color: #CBD5E1 !important;
+}
+
+/* Botones de horarios disponibles */
+.btn-horario {
+    color: #0B7F7B;
+    border-color: #0B7F7B;
+}
+
+.btn-horario:hover,
+.btn-horario.active {
+    background-color: #0B7F7B;
+    border-color: #0B7F7B;
+    color: #fff;
+}
+
+/* Los botones azules de Bootstrap (btn-primary) de los ABM toman el verde de la clínica */
+.btn-primary {
+    --bs-btn-bg: #0B7F7B;
+    --bs-btn-border-color: #0B7F7B;
+    --bs-btn-hover-bg: #086966;
+    --bs-btn-hover-border-color: #086966;
+    --bs-btn-active-bg: #075956;
+    --bs-btn-active-border-color: #075956;
+}
+
+/* Horarios ocupados: se ven tachados y no se pueden elegir */
+.btn-ocupado,
+.btn-ocupado:disabled {
+    background-color: #EEF2F4;
+    border-color: #D6DDE1;
+    color: #9AA8B1;
+    text-decoration: line-through;
+    opacity: 1;
+    cursor: not-allowed;
+}
