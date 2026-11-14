@@ -1,0 +1,21 @@
+PARTE DE BELÉN · LOGIN DEL PERSONAL (pantalla 1)
+================================================
+
+Archivos que van en esta carpeta (admin/), copiando los de crud:
+
+  [ ] index.php           Formulario de login (diseño en dos mitades)   (sale de crud/index.php)
+  [ ] login.js            Envía el login con fetch                       (sale de crud/login.js, igual)
+  [ ] validar_login.php   Valida contra usuarios_sistema + roles         (sale de crud/validar_login.php)
+  [ ] logout.php          Cierra la sesión                               (sale de crud/logout.php, igual)
+
+CÓMO SE ENGANCHA CON LO QUE YA ESTÁ HECHO
+- Sin este login no se puede entrar a ninguna página de admin: requerir_login() manda a index.php.
+- validar_login.php tiene que guardar en la sesión exactamente estas claves,
+  porque las usan header.php, funciones.php y usuarios_sistema/:
+      $_SESSION['id_usuario']  = id del usuario
+      $_SESSION['usuario']     = nombre de usuario
+      $_SESSION['nombre']      = nombre_completo
+      $_SESSION['rol']         = nombre del rol (de la tabla roles), por ejemplo 'Administrador'
+- La consulta necesita INNER JOIN roles r ON r.id_rol = u.id_rol (y "r.nombre AS rol").
+- Después del login correcto, login.js lleva a home.php (ya está hecho).
+- Para probar: usuario admin / contraseña admin123.

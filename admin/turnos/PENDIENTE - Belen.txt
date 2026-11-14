@@ -1,0 +1,27 @@
+PARTE DE BELÉN · MÓDULO DE TURNOS (pantallas 7, 8, 9 y 10)
+==========================================================
+
+Archivos que van en esta carpeta (admin/turnos/), copiando la carpeta prestamos/ de crud:
+
+  [ ] listar.php      Consulta de turnos con filtros y total     (sale de prestamos/listar.php)
+  [ ] nuevo.php       Nuevo turno: paciente, profesional, fecha,  (sale de prestamos/nuevo.php)
+                      horario y servicios con el total
+  [ ] guardar.php     Cabecera + detalle en una transacción       (sale de prestamos/guardar.php)
+  [ ] ver.php         Detalle del turno                           (sale de prestamos/ver.php)
+  [ ] editar.php      Cambiar fecha, horario o estado             (sale de prestamos/editar.php)
+  [ ] modificar.php   El UPDATE de editar.php                     (sale de prestamos/modificar.php)
+  [ ] cancelar.php    Pasa el turno a estado 4 (Cancelado)        (sale de prestamos/devolver.php)
+
+Y además, en admin/includes/:
+
+  [ ] turnos_funciones.php   con la función horarios_libres($conexion, $idProfesional, $fecha)
+                             (la usa también Sofía en la reserva online)
+
+CÓMO SE ENGANCHA CON LO QUE YA ESTÁ HECHO
+- El menú (includes/header.php) ya tiene el link a turnos/listar.php.
+- El panel (home.php) ya tiene links a turnos/nuevo.php y a turnos/ver.php?id=N° de turno.
+- Cada archivo empieza igual que los ABM: require_once "../includes/funciones.php"; y requerir_login('../');
+- Tablas: turnos (cabecera) y detalle_turno (detalle). Estados: 1 Pendiente, 2 Confirmado, 3 Atendido, 4 Cancelado.
+- En guardar.php, id_usuario = $_SESSION['id_usuario'] (quién cargó el turno).
+
+Guía paso a paso: presentaciones "Guía de trabajo", "Guía de código" y "Paso a paso".
